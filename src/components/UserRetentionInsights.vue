@@ -100,7 +100,7 @@ export default {
       responseData.forEach(weeklySeriesCohort => {
         const { title, series } = weeklySeriesCohort
         chartOptions.push({
-          title,
+          name: title,
           data: this.generateStepSeries(series)
         })
       })
@@ -113,7 +113,6 @@ export default {
         const { name, percentage } = userRetentionStep.step
         seriesForChart.push({
           name,
-          color: '#00FF00',
           x: percentage,
           y: userRetentionStep.user_retained_percentage
         })
