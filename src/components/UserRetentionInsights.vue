@@ -6,9 +6,8 @@
 export default {
   name: 'UserRetentionInsights',
   mounted () {
-    this.$http.get('http://localhost:5555/api/v1/on_boarding_flow/insights')
+    this.$http.get(process.env.VUE_APP_API_URL + '/api/v1/on_boarding_flow/insights')
       .then((response) => {
-        console.log('Response', response)
         if (response.status >= 200 && response.status < 400) {
           const series = this.generateWeeklySeries(response.data.data)
           this.chartOptions.series = series
@@ -38,59 +37,6 @@ export default {
           tickInterval: 5
         },
         series: []
-        // series: [{
-        //   name: '2016-09-09',
-        //   data: [
-        //     {
-        //       name: 'Create Account',
-        //       color: '#00FF00',
-        //       x: 0,
-        //       y: 100
-        //     },
-        //     {
-        //       name: 'Activate Account',
-        //       color: '#00FF00',
-        //       x: 20,
-        //       y: 100
-        //     },
-        //     {
-        //       name: 'Provide Profile Information',
-        //       color: '#00FF00',
-        //       x: 40,
-        //       y: 80
-        //     },
-        //     {
-        //       name: 'What jobs are you interested in?',
-        //       color: '#00FF00',
-        //       x: 50,
-        //       y: 60
-        //     },
-        //     {
-        //       name: 'Do you have relevant experience in these jobs?',
-        //       color: '#00FF00',
-        //       x: 70,
-        //       y: 40
-        //     },
-        //     {
-        //       name: 'Are you a freelancer?',
-        //       color: '#00FF00',
-        //       x: 90,
-        //       y: 40
-        //     },
-        //     {
-        //       name: 'Waiting for approval',
-        //       color: '#00FF00',
-        //       x: 99,
-        //       y: 40
-        //     },
-        //     {
-        //       name: 'Approval',
-        //       color: '#00FF00',
-        //       x: 100,
-        //       y: 40
-        //     },
-        //   ]
-        // }]
       }
     }
   },
