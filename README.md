@@ -1,21 +1,27 @@
-# app
+# User Retention Curve
+This application shows up a retention curve chart based on the series data coming from the Temper Onboarding flow user retention. 
+- Each line represents a weekly cohort.
+- The X-axis represents the boarding step of the flow.
+- The Y-axis represents the percentage of the users retained in that step.
 
-> onboarding-flow-insights
+## Retention Curve Example
+![plot screenshot](./screenshots/retention_curve_example.png)
 
-## Build Setup
+## Installation
 
 ``` bash
 # install dependencies
-npm install
+yarn install
 
 # serve with hot reload at localhost:8080
-npm run dev
+yarn start
 
 # build for production with minification
-npm run build
+yarn build
 
 # build for production and view the bundle analyzer report
-npm run build --report
+yarn build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Running the application
+You just need to run the local server using the `yarn start` command, so a web-server will be running and pointing to the `index` of this project.
