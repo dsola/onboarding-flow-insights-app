@@ -1,10 +1,19 @@
 <template>
-    $END$
+  <highcharts :options="chartOptions"></highcharts>
 </template>
 
 <script>
   export default {
-    name: 'UserRetentionInsights'
+    name: 'UserRetentionInsights',
+    data () {
+      return {
+        chartOptions: {
+          series: [{
+            data: [1,2,3] // sample data
+          }]
+        }
+      }
+    }
   }
 </script>
 

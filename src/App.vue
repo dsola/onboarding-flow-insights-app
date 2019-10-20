@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
+
+import {Chart} from 'highcharts-vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    highcharts: Chart
+  }
 }
 </script>
 

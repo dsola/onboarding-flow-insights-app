@@ -3,8 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import HighchartsVue from 'highcharts-vue'
 
 Vue.config.productionTip = false
+Vue.use(HighchartsVue)
 
 /* eslint-disable no-new */
 new Vue({
